@@ -1,0 +1,48 @@
+Serial Event:
+1)
+int contador;
+void setup()
+{
+  Serial.begin (9600);
+}
+
+void loop() {
+}
+void serialEvent () {
+   Serial.read();
+  contador=contador+1;
+  Serial.println (contador);
+}
+
+2)
+void setup()
+{
+  Serial.begin (9600);
+}
+
+void loop() {
+}
+void serialEvent () {
+ Serial.read ();
+ Serial.println ("se ingresaron datos");
+}
+
+3)
+void setup()
+{
+  Serial.begin (9600);
+}
+
+void loop() {
+  Serial.println ("Funcionamiento OK");
+  delay (1000);
+}
+void serialEvent () {
+ if (Serial.available())
+   {
+   String lectura = Serial.readString(); 
+   if(lectura == "hola"){
+     Serial.println ("Bien!");}
+   }
+  
+}
