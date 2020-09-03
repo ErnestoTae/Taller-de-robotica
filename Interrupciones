@@ -1,0 +1,45 @@
+Interrupciones:
+1) 
+void setup() {
+ Serial.begin(9600);
+pinMode(9,OUTPUT);
+}
+void loop() {
+
+  if(Serial.available()>0){
+    digitalWrite(9,HIGH);
+    delay(1000);
+    digitalWrite(9,LOW);
+    delay(1000);
+    }  
+}
+2)
+void setup() {
+ Serial.begin(9600);
+pinMode(9,OUTPUT);
+}
+void loop() {
+  if (Serial.available()>0){
+    String es = Serial.readString();
+      if(es=="encender"){
+    digitalWrite(9,HIGH);
+    delay(1000);}
+      else if(es=="apagar"){
+    digitalWrite(9,LOW);
+    delay(1000);}
+  }
+}
+3)
+void setup() {
+ Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available()>0){
+    String es = Serial.readString();
+      if(es=="hola"){
+    Serial.print("¿Cómo estás?");}
+      else if(es=!"hola"){
+      }
+  }
+}
