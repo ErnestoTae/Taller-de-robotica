@@ -34,7 +34,7 @@ void setup()
 }
 
 void loop() {
-  Serial.println ("Funcionamiento OK");
+  Serial.println ("Funcionamiento bien");
   delay (1000);
 }
 void serialEvent () {
@@ -42,7 +42,7 @@ void serialEvent () {
    {
    String lectura = Serial.readString(); 
    if(lectura == "hola"){
-     Serial.println ("Bien!");}
+     Serial.println ("Bien!");
    }
   
 }
